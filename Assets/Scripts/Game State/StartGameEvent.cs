@@ -2,6 +2,6 @@
 
 namespace UseYourGifs
 {
-    public struct PlayersUpdatedEvent : IEvent
+    public struct StartGameEvent : IEvent
     { }
 }

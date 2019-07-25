@@ -1,6 +1,6 @@
 ﻿using Curveball;
 
-namespace VillageBuilder
+namespace UseYourGifs
 {
     public struct RoomCreatedEvent : IEvent
     {

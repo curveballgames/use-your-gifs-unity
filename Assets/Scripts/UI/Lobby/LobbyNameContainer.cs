@@ -1,7 +1,7 @@
 ﻿using Curveball;
 using TMPro;
 
-namespace VillageBuilder
+namespace UseYourGifs
 {
     public class LobbyNameContainer : CBGUIComponent
     {

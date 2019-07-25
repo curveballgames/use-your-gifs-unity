@@ -2,11 +2,11 @@
 
 namespace UseYourGifs
 {
-    public struct CreatePlayerEvent : IEvent
+    public struct RoundStartedEvent : IEvent
     {
         public string PlayerName;
 
-        public CreatePlayerEvent(string playerName)
+        public RoundStartedEvent(string playerName)
         {
             PlayerName = playerName;
         }

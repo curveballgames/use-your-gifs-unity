@@ -1,4 +1,4 @@
-﻿namespace VillageBuilder
+﻿namespace UseYourGifs
 {
     public class Player
     {

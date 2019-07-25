@@ -4,7 +4,7 @@ using UnityEngine;
 using Curveball;
 using TMPro;
 
-namespace VillageBuilder
+namespace UseYourGifs
 {
     public class LobbyScreen : SimpleMenuScreen
     {

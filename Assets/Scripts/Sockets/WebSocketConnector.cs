@@ -4,7 +4,7 @@ using Curveball;
 
 using WebSocketSharp;
 
-namespace VillageBuilder
+namespace UseYourGifs
 {
     public class WebSocketConnector : CBGGameObject
     {
@@ -48,6 +48,11 @@ namespace VillageBuilder
             {
                 webSocket.Close();
             }
+        }
+
+        public static void SendEvent(WebSocketEvent e)
+        {
+            webSocket.Send(e.ToJSON());
         }
     }
 }

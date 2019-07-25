@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Curveball;
 
-namespace VillageBuilder
+namespace UseYourGifs
 {
     public class WebSocketEventHandler : CBGGameObject
     {
@@ -21,6 +21,8 @@ namespace VillageBuilder
                 Message nextMessage = messagesToProcess.Dequeue();
                 string type = nextMessage.EventType;
 
+                Debug.Log("Received message of type: " + type);
+
                 switch (type)
                 {
                     case "room_created":
@@ -28,6 +30,9 @@ namespace VillageBuilder
                         break;
                     case "player_joined":
                         HandlePlayerJoined(nextMessage);
+                        break;
+                    case "start_game":
+                        HandleStartGame();
                         break;
                     case "error":
                         HandleError(nextMessage);
@@ -46,6 +51,12 @@ namespace VillageBuilder
         {
             string playerName = (string)message.GetField("player_name");
             EventSystem.Publish(new CreatePlayerEvent(playerName));
+        }
+
+        // sent by a client by pressing the Start Game button on their mobile.
+        void HandleStartGame()
+        {
+            EventSystem.Publish(new StartGameEvent());
         }
 
         void HandleError(Message message)

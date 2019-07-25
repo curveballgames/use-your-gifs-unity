@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Curveball;
 
-namespace VillageBuilder
+namespace UseYourGifs
 {
     public class Message
     {
