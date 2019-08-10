@@ -13,6 +13,11 @@ namespace UseYourGifs
         void Start()
         {
             CreateSocketConnection();
+            EventSystem.Subscribe<ConnectToNewRoomEvent>((ConnectToNewRoomEvent e) =>
+            {
+                webSocket.Close();
+                CreateSocketConnection();
+            }, this);
         }
 
         void CreateSocketConnection()

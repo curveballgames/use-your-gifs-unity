@@ -61,5 +61,10 @@ namespace UseYourGifs
                 }
             }
         }
+
+        public void CreateNewRoom()
+        {
+            EventSystem.Publish(new ConnectToNewRoomEvent());
+        }
     }
 }

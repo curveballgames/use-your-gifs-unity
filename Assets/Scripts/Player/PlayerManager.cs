@@ -40,6 +40,7 @@ namespace UseYourGifs
         {
             EventSystem.Subscribe<CreatePlayerEvent>(OnCreatePlayer, this);
             EventSystem.Subscribe<StartGameEvent>(OnStartGame, this);
+            EventSystem.Subscribe<ConnectToNewRoomEvent>(OnConnectToNewRoom, this);
         }
 
         void OnCreatePlayer(CreatePlayerEvent e)
@@ -59,6 +60,13 @@ namespace UseYourGifs
         {
             ShufflePlayers();
             nextPlayerIndex = 0;
+        }
+
+        void OnConnectToNewRoom(ConnectToNewRoomEvent e)
+        {
+            Players = new Player[MAX_PLAYERS];
+            nextPlayerIndex = 0;
+            EventSystem.Publish(new PlayersUpdatedEvent());
         }
 
         void ShufflePlayers()

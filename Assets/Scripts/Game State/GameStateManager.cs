@@ -23,6 +23,7 @@ namespace UseYourGifs
 
             EventSystem.Subscribe<StartGameEvent>(OnStartGame, this);
             EventSystem.Subscribe<NewGameCountdownCompleteEvent>(OnNewGameCountdownComplete, this);
+            EventSystem.Subscribe<ConnectToNewRoomEvent>(OnConnectToNewRoom, this);
         }
 
         void OnStartGame(StartGameEvent e)
@@ -36,6 +37,11 @@ namespace UseYourGifs
         void OnNewGameCountdownComplete(NewGameCountdownCompleteEvent e)
         {
             CurrentState = GameState.NewRound;
+        }
+
+        void OnConnectToNewRoom(ConnectToNewRoomEvent e)
+        {
+            CurrentState = GameState.Lobby;
         }
     }
 }
